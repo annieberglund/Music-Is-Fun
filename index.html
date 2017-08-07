@@ -6,25 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Music Is Fun!</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Kalam:300,400" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 </head>
-
+<style>
+	
+</style>
 <body>
-    <form class="form-inline" onsubmit="app.controllers.itunesCtrl.getMusic(event)">
-        <!--DO NOT MODIFY THE ID OR ONCLICK ATTRIBUTES IN THIS FORM-->
-        <div class="form-group">
-            <input type="text" class="form-control" name="artist" placeholder="Artist Name" />
-            <button type="submit" class="btn btn-primary" id="get-music-button">Get Music</button>
+    <div class="container-fluid">
+        <div class="row title">
+	        <div class="col-sm-12 col-md-1 text-left">
+                <img class="musicLogo" src="logo-1.png" />
+            </div>
+            <div class="col-sm-12 col-md-11 text-left ">
+                <h1>Music Is Fun!</h1>
+            </div>
         </div>
-    </form>
-    <div id="songs">
-
+        <div class="row text-center search-bar">
+	        <div class="col-xs-12">
+		        <h2>A universe of music at your fingertips</h2>
+	        </div>
+	        
+            <div class="col-xs-12 search-bar">
+                <form class="form-inline search-form" onsubmit="app.controllers.itunesCtrl.getMusic(event)">
+                    <!--DO NOT MODIFY THE ID OR ONCLICK ATTRIBUTES IN THIS FORM-->
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="artist" placeholder="Artist Name" /> <!-- is the e -->
+                        <button type="submit" class="btn search-btn" id="get-music-button">Get Music</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div id="song-list" class="row">
+    
+        </div>
     </div>
+    </div>
+	
     <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
     <script src="itunes-service.js"></script>
     <script src="itunes-controller.js"></script>
     <script src="app.js"></script>
+    
 </body>
 
 </html>

@@ -1,10 +1,12 @@
 function ItunesService(){
+  console.log(3)
 
     this.getMusicByArtist = function(artist) {
+      console.log(5)
 
       //allows requests to localhost: 8080 otherwise blocked by itunes
       var url = '//bcw-getter.herokuapp.com/?url=';
-      var url2 = 'https://itunes.apple.com/search?term=' + artist;
+      var url2 = 'https://itunes.apple.com/search?media=music&term=' + artist;
       var apiUrl = url + encodeURIComponent(url2);
       
       //changes the button to loading while songs load
@@ -13,6 +15,7 @@ function ItunesService(){
       //modifies the objects to reduce the excess data
       return $.getJSON(apiUrl).then(function(response){
         var songList = response.results.map(function (song) {
+          console.log(6)
                   return {
                       title: song.trackName,
                       albumArt: song.artworkUrl60,
@@ -21,9 +24,11 @@ function ItunesService(){
                       price: song.collectionPrice,
                       preview: song.previewUrl
                     };
+                    
                 })
         //changes button back to GET MUSIC once songs are loaded
         $('#get-music-button').text('GET MUSIC');
+        console.log(7)
         return songList;
       })
     }
